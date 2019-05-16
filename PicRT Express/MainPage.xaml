@@ -1,0 +1,709 @@
+﻿<Page
+    x:Class="PicRT_Express.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PicRT_Express"
+    xmlns:model="using:PicRT_Express.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.TopAppBar>
+        <CommandBar IsSticky="True"
+                    IsOpen="True"
+                    Margin="0,33,0,0"
+                    Background="Transparent">
+            
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="About"
+                              Click="AboutCommandBarButtonClick" 
+                              FontFamily="Roboto" 
+                              FontSize="12" >
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="/Assets/ic_info.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal" 
+                            Margin="0,0,0,10">
+                    <Image Source="/Assets/StoreLogo.png" 
+                           Width="32" 
+                           Height="32" 
+                           Margin="50,0,0,0" />
+                    <TextBlock x:Uid="AppName" 
+                               FontFamily="Roboto Black" 
+                               FontSize="22" FontWeight="Bold" 
+                               Margin="72,8,0,10" />
+                </StackPanel>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Grid Margin="0,62,0,0">
+
+        <VisualStateManager.VisualStateGroups>
+
+            <VisualStateGroup x:Name="VisualStateGroup">
+
+                <VisualState x:Name="Wide">
+
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="960" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+
+                        <Setter Target="LeftCol.Width" Value="4*" />
+                        <Setter Target="RightCol.Width" Value="6*" />
+                        <Setter Target="RightPane.(Grid.Row)" Value="0" />
+                        <Setter Target="RightPane.(Grid.Column)" Value="1" />
+                        <Setter Target="DefaultImagesGrid.Height" Value="720" />
+
+                    </VisualState.Setters>
+
+                </VisualState>
+
+                <VisualState x:Name="XWide">
+
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="2560" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+
+                        <Setter Target="DefaultImagesGrid.Height" Value="1280" />
+
+                    </VisualState.Setters>
+
+                </VisualState>
+
+            </VisualStateGroup>
+
+        </VisualStateManager.VisualStateGroups>
+        
+        <ScrollViewer Grid.Row="1">
+
+            <!-- ________________________________________ MAIN GRID ________________________________________ -->
+            <Grid Padding="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="TopRow" Height="Auto" />
+                    <RowDefinition x:Name="BottomRow" Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="LeftCol" Width="10*" />
+                    <ColumnDefinition x:Name="RightCol" Width="0*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- ________________________________________ LEFT PANE ________________________________________ -->
+                <StackPanel 
+                        Name="LeftPane" 
+                        Grid.Row="0"
+                        Grid.Column="0" 
+                        Margin="0,0,24,0">
+
+                    
+
+                    <TextBlock x:Uid="SelectInstructions" 
+                                   FontFamily="Roboto" 
+                                   FontSize="16" 
+                                   TextWrapping="Wrap" />
+
+                    <GridView x:Name="DefaultImagesGrid" 
+                                  ItemsSource="{x:Bind DefaultImages}" 
+                                  Margin="0,25,0,25" 
+                                  SelectionMode="Single" 
+                                  Height="400" 
+                                  IsItemClickEnabled="True" 
+                                  ItemClick="DefaultImageSelected" >
+                        <GridView.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <Image Source="{x:Bind}" Stretch="UniformToFill" Margin="10,10,10,10" />
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Uid="SelectFromDisk"
+                                       Grid.Row="0"
+                                       Grid.Column="0" 
+                                       FontFamily="Roboto" 
+                                       FontSize="12" VerticalAlignment="Center" />
+
+                        <Button x:Uid="Select"
+                                    Grid.Row="0"
+                                    Grid.Column="1" 
+                                    Click="SelectImageButtonClick" />
+
+                    </Grid>
+
+                </StackPanel>
+
+                <!-- ________________________________________ RIGHT PANE ________________________________________ -->
+                <StackPanel Name="RightPane" 
+                            Grid.Row="1" 
+                            Grid.Column="0" 
+                            Margin="15,0,0,0">
+
+                    <FlyoutPresenter x:Name="FlyoutNotification" 
+                                     Canvas.ZIndex="2"
+                                     Foreground="White"
+                                     Background="{ThemeResource SystemControlHighlightAccentBrush}" 
+                                     Height="20" 
+                                     VerticalAlignment="Top" 
+                                     Opacity="0" 
+                                     Margin="0,10,0,10">
+                        <StackPanel>
+                            <TextBlock x:Name="FlyoutText" 
+                                       Text="fsfsfgf" 
+                                       FontFamily="Roboto" 
+                                       FontSize="12" />
+                            <Grid>
+                                <ProgressBar x:Name="ProgressIndeterminate"
+                                             Foreground="White"
+                                             FlowDirection="RightToLeft" 
+                                             IsIndeterminate="True" 
+                                             Canvas.ZIndex="1" />
+                                <ProgressBar x:Name="ProgressDeterminate" 
+                                             IsIndeterminate="False" 
+                                             Foreground="White" />
+                            </Grid>
+                        </StackPanel>
+                    </FlyoutPresenter>
+
+                    <!-- ________________________________________ EFFECTS PANEL ________________________________________ -->
+                    <StackPanel Margin="0,5,0,10">
+
+                        <TextBlock x:Uid="SelectEffect"
+                                   Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   Grid.ColumnSpan="2"
+                                   FontFamily="Roboto" 
+                                   FontSize="12" 
+                                   Margin="0,0,0,15" />
+
+                        <GridView x:Name="EffectsGrid" 
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                  ScrollViewer.VerticalScrollMode="Disabled"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollMode="Enabled"
+                                  ItemsSource="{x:Bind Effects}" 
+                                  Margin="0,15,0,25" 
+                                  SelectionMode="Single" 
+                                  IsItemClickEnabled="True" 
+                                  HorizontalContentAlignment="Stretch" 
+                                  VerticalContentAlignment="Center"
+                                  ItemClick="EffectsGridItemClick" >
+                            <GridView.ItemTemplate>
+                                <DataTemplate x:DataType="model:Effect">
+                                    <TextBlock Text="{x:Bind}" FontFamily="Roboto" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Padding="10,5,10,5" />
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid MaximumRowsOrColumns="2"/>
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                        </GridView>
+
+                        <!-- ________________________________________ EFFECT PROPERTIES PANEL ________________________________________ -->
+                        <StackPanel x:Name="EffectsPropertiesPanel">
+
+                            <!-- ________________________________________ BRIGHTNESS ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesBrightnessGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Uid="EffectBrightnessAmount"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectBrightnessAmountBox"
+                                         Grid.Row="0"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="0" />
+
+                            </Grid>
+
+                            <!-- ________________________________________ CONVOLUTIONS ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesConvolutionGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Uid="EffectConvolutionSimpleBoxBlur"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="0"
+                                        Click="EffectConvolutionButton" />
+
+                                <Button x:Uid="EffectConvolutionGaussianBlur"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="1"
+                                        Click="EffectConvolutionButton" />
+
+                                <Button x:Uid="EffectConvolutionLineDetection"
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="2"
+                                        Click="EffectConvolutionButton" />
+
+                                <Button x:Uid="EffectConvolutionEdgeDetection"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="3"
+                                        Click="EffectConvolutionButton" />
+
+                            </Grid>
+
+                        
+                            <!-- ________________________________________ RGB ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesRGBGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Uid="EffectRGB_R"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRGB_RBox"
+                                         Grid.Row="0"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="100" />
+
+                                <TextBlock x:Uid="EffectRGB_G"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRGB_GBox"
+                                         Grid.Row="1"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="100" />
+
+                                <TextBlock x:Uid="EffectRGB_B"
+                                           Grid.Row="2"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRGB_BBox"
+                                         Grid.Row="2"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="100" />
+
+                            </Grid>
+
+                            <!-- ________________________________________ Random Lines ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesRandomLinesGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Uid="EffectRandomLinesHorizontalSpace"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRandomLinesHorizontalSpaceBox"
+                                         Grid.Row="0"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="20" />
+
+                                <TextBlock x:Uid="EffectRandomLinesVerticalSpace"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRandomLinesVerticalSpaceBox"
+                                         Grid.Row="1"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="20" />
+
+                            </Grid>
+
+                            <!-- ________________________________________ Rotate ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesRotateGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Uid="EffectRotateAngle"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectRotateAngleBox"
+                                         Grid.Row="0"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,5,5,5" 
+                                         Text="90" />
+
+                            </Grid>
+                            
+                            <!-- ________________________________________ PIXELATE ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesPixelateGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock x:Uid="EffectPixelateRadius"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectPixelateRadiusBox"
+                                         Grid.Row="0"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,0,5,0" 
+                                         Text="4" />
+                                
+                            </Grid>
+                            
+                            <!-- ________________________________________ PLOT ________________________________________ -->
+                            <Grid x:Name="EffectPropertiesPlotGrid"
+                                  Visibility="Collapsed">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Uid="EffectPlotLinear"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="0"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotCuadratic"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="1"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotCubic"
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="2"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotSquareRoot"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="3"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotSine"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="4"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotCosine"
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="5"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotTangent"
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="6"
+                                        Click="EffectPlotButton" />
+
+                                <Button x:Uid="EffectPlotLog"
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="10,5,10,5"
+                                        Tag="7"
+                                        Click="EffectPlotButton" />
+
+                                <TextBlock x:Uid="EffectPlotPrecision"
+                                           Grid.Row="3"
+                                           Grid.Column="1"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+                                
+                                <TextBox x:Name="EffectPlotPrecisionBox"
+                                         Grid.Row="3"
+                                         Grid.Column="2" 
+                                         InputScope="Number"
+                                         Text="10" />
+
+                                <TextBlock x:Uid="EffectPlotScale"
+                                           Grid.Row="4"
+                                           Grid.Column="0"
+                                           FontFamily="Roboto" 
+                                           FontSize="12"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+
+                                <TextBox x:Name="EffectPlotScaleXBox"
+                                         Grid.Row="4"
+                                         Grid.Column="1" 
+                                         InputScope="Number" 
+                                         Margin="5,0,5,0" 
+                                         Text="1" />
+
+                                <TextBox x:Name="EffectPlotScaleYBox"
+                                         Grid.Row="4"
+                                         Grid.Column="2" 
+                                         InputScope="Number" 
+                                         Margin="5,0,5,0" 
+                                         Text="1" />
+                                
+                            </Grid>
+                            
+                        </StackPanel>
+
+                        <!-- ________________________________________ EFFECT ACTIONS PANEL ________________________________________ -->
+                        <Grid x:Name="EffectActionsGrid"
+                              Margin="5,5,5,5"
+                              Visibility="Collapsed">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Button x:Uid="SaveChange" 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="10"
+                                    HorizontalAlignment="Stretch"
+                                    Click="SaveChangeButtonClick" />
+                            <Button x:Uid="Apply" 
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="10"
+                                    HorizontalAlignment="Stretch"
+                                    Click="ApplyEffectButtonClick" />
+                        </Grid>
+                        
+                    </StackPanel>
+
+                    <StackPanel Height="1"
+                                Background="#FF737373" />
+
+                        <Grid Margin="0,25,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Uid="Image" 
+                                       Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       FontFamily="Roboto Black" 
+                                       FontSize="12" 
+                                       HorizontalAlignment="Center" 
+                                       Margin="0,0,0,15" 
+                                       FontWeight="Bold" />
+                            <TextBlock x:Uid="Result" 
+                                       Grid.Row="0" 
+                                       Grid.Column="1" 
+                                       FontFamily="Roboto Black" 
+                                       FontSize="12" 
+                                       HorizontalAlignment="Center" 
+                                       Margin="0,0,0,15" 
+                                       FontWeight="Bold" />
+                            <Image Grid.Row="1" Grid.Column="0" Margin="0,0,15,0" x:Name="SelectedImage" />
+                            <Image Grid.Row="1" Grid.Column="1" Margin="15,0,0,0" x:Name="ResultImage" />
+                        </Grid>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Uid="Save" 
+                                    x:Name="SaveButton"
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    Margin="0,10,0,10" 
+                                    IsEnabled="False"
+                                    HorizontalAlignment="Stretch"
+                                    Click="SaveButtonClick" />
+                            <Button x:Uid="Reset" 
+                                    x:Name="ResetButton"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,10,0,10" 
+                                    IsEnabled="False"
+                                    HorizontalAlignment="Stretch"
+                                    Click="ResetButtonClick" />
+                            <Button x:Uid="OpenSavedImages" 
+                                    x:Name="OpenSavedImagesButton"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Margin="0,10,0,10" 
+                                    HorizontalAlignment="Stretch"
+                                    Click="OpenImagesButtonClick" />
+                        </Grid>
+                    
+                    </StackPanel>
+
+            </Grid>
+
+        </ScrollViewer>
+
+    </Grid>
+    
+</Page>

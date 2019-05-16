@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="PicRT_Express.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PicRT_Express">
+
+</Application>

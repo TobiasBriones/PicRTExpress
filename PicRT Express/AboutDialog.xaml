@@ -1,0 +1,77 @@
+﻿<ContentDialog
+    x:Class="PicRT_Express.Models.AboutDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PicRT_Express.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Light">
+
+    <Grid Margin="0,20,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Uid="AboutTitle"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Margin="5" 
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   FontFamily="Roboto"
+                   Foreground="#FF212121" />
+
+        <TextBlock x:Uid="AboutMsg"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Margin="5,5,5.001,19" 
+                   FontSize="14" 
+                   FontFamily="Roboto"
+                   TextWrapping="Wrap" 
+                   Foreground="#FF737373" />
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Margin="5" 
+                   FontSize="12" 
+                   FontFamily="Roboto"
+                   TextWrapping="WrapWholeWords" 
+                   Foreground="#FF212121">
+            
+            <Span><Run x:Uid="AboutThanksPixabayMsg"></Run><Hyperlink NavigateUri="https://pixabay.com/">Pixabay</Hyperlink></Span>
+        </TextBlock>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Margin="5" 
+                   FontSize="12" 
+                   FontFamily="Roboto"
+                   FontStyle="Italic"
+                   TextWrapping="Wrap" 
+                   Foreground="#FF212121">
+            <Span><Run x:Uid="CopyrightMsg"></Run><Hyperlink NavigateUri="https://github.com/TobiasBriones">GitHub</Hyperlink></Span>
+        </TextBlock>
+
+        <Button x:Uid="OkAction"
+                Grid.Row="4"
+                Grid.Column="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="{ThemeResource SystemControlHighlightAccentBrush}"
+                Click="ActionOkClick" />
+    </Grid>
+</ContentDialog>
