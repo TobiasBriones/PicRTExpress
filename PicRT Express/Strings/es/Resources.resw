@@ -118,196 +118,187 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutMsg.Text" xml:space="preserve">
-    <value>PicRT Express - Picture ReTouch Express is an educational purpose UWP application for Software Engineering and Applied Mathematics which is implemented as a user UWP application based on mixed code and applies transformations and effects to images. It invokes C++ native code for high demanding mathematical operations thanks mainly to OpenCV and it also uses managed high-level code to process the user interface layer. The objectives are to know the architecture ran by an application which executes high performing tasks and the commercial product development; on the other hand, the application of widely used branches of math like linear algebra and differential equations theory.</value>
-  </data>
-  <data name="AppName.Text" xml:space="preserve">
-    <value>PicRT Express</value>
+    <value>PicRT Express - Picture ReTouch Express es una aplicación UWP de propósito educativo para Ingeniería de Software y Matemática Aplicada que se implementa como una aplicación UWP de usuario basada en código mixto y aplica transformaciones y efectos a las imágenes. Invoca código nativo C ++ para operaciones matemáticas de alta exigencia gracias principalmente a OpenCV y también utiliza código manejado de alto nivel para procesar la capa de interfaz de usuario. Los objetivos son conocer la arquitectura ejecutada por una aplicación que corre tareas de alto rendimiento y el desarrollo de productos comerciales; por otro lado, la aplicación de ramas de matemáticas ampliamente utilizadas como el álgebra lineal y la teoría de ecuaciones diferenciales.</value>
   </data>
   <data name="CancelAction" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="CopyrightMsg.Text" xml:space="preserve">
-    <value>© 2019 Tobias Briones - PicRT Express</value>
+    <value>Cancelar</value>
   </data>
   <data name="EffectBrightness" xml:space="preserve">
-    <value>Brightness</value>
+    <value>Brillo</value>
   </data>
   <data name="EffectBrightnessAmount.Text" xml:space="preserve">
-    <value>Brightness quantity [-100, 100]</value>
+    <value>Cantidad de brillo [-100, 100]</value>
   </data>
   <data name="EffectPixelated" xml:space="preserve">
-    <value>Pixelated</value>
+    <value>Pixelado</value>
   </data>
   <data name="EffectPixelateRadius.Text" xml:space="preserve">
-    <value>Radius</value>
+    <value>Radio</value>
   </data>
   <data name="EffectPlot" xml:space="preserve">
-    <value>Plot</value>
+    <value>Gráfica</value>
   </data>
   <data name="EffectPlotCosine.Content" xml:space="preserve">
-    <value>Cosine</value>
+    <value>Coseno</value>
   </data>
   <data name="EffectPlotCuadratic.Content" xml:space="preserve">
-    <value>Quadratic</value>
+    <value>Cuadrática</value>
   </data>
   <data name="EffectPlotCubic.Content" xml:space="preserve">
-    <value>Cubic</value>
+    <value>Cúbica</value>
   </data>
   <data name="EffectPlotLinear.Content" xml:space="preserve">
-    <value>Linear</value>
+    <value>Lineal</value>
   </data>
   <data name="EffectPlotLog.Content" xml:space="preserve">
-    <value>Logarithmic</value>
+    <value>Logarítmica</value>
   </data>
   <data name="EffectPlotPrecision.Text" xml:space="preserve">
-    <value>Precision</value>
+    <value>Precisión</value>
   </data>
   <data name="EffectPlotScale.Text" xml:space="preserve">
-    <value>Scale (x, y)</value>
+    <value>Escala (x, y)</value>
   </data>
   <data name="EffectPlotSine.Content" xml:space="preserve">
-    <value>Sine</value>
+    <value>Seno</value>
   </data>
   <data name="EffectPlotSquareRoot.Content" xml:space="preserve">
-    <value>Squared root</value>
+    <value>Raíz cuadrada</value>
   </data>
   <data name="EffectPlotTangent.Content" xml:space="preserve">
-    <value>Tangent</value>
+    <value>Tangente</value>
   </data>
   <data name="EffectRGB" xml:space="preserve">
     <value>RGB</value>
   </data>
   <data name="EffectRGB_B.Text" xml:space="preserve">
-    <value>Blue intensity</value>
+    <value>Intensidad de Azul</value>
   </data>
   <data name="EffectRGB_G.Text" xml:space="preserve">
-    <value>Green intensity</value>
+    <value>Intensidad de Verde</value>
   </data>
   <data name="EffectRGB_R.Text" xml:space="preserve">
-    <value>Red intensity</value>
+    <value>Intensidad de Rojo</value>
   </data>
   <data name="FlyoutApplying" xml:space="preserve">
-    <value>Applying...</value>
+    <value>Aplicando...</value>
     <comment>Text for flyout progress bar when applying something</comment>
   </data>
   <data name="FlyoutLoading" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Cargando...</value>
     <comment>Text for flyout progress bar when loading</comment>
   </data>
   <data name="Image.Text" xml:space="preserve">
-    <value>Image</value>
+    <value>Imagen</value>
   </data>
   <data name="OpenSavedImages.Content" xml:space="preserve">
-    <value>Go to my images</value>
+    <value>Ir a mis imágenes</value>
     <comment>Text for opening the save folder</comment>
   </data>
   <data name="Reset.Content" xml:space="preserve">
-    <value>Undo changes</value>
+    <value>Deshacer cambios</value>
     <comment>Text for reset button</comment>
   </data>
   <data name="ResetAction" xml:space="preserve">
-    <value>Reset</value>
+    <value>Resetear</value>
   </data>
   <data name="ResetDialog" xml:space="preserve">
-    <value>Undo the changes?</value>
+    <value>¿Deshacer los cambios?</value>
     <comment>Text for reset button confirm dialog</comment>
   </data>
   <data name="Result.Text" xml:space="preserve">
-    <value>Result</value>
+    <value>Resultado</value>
   </data>
   <data name="Save.Content" xml:space="preserve">
-    <value>Save</value>
+    <value>Guardar</value>
     <comment>Text for save button</comment>
   </data>
   <data name="Select.Content" xml:space="preserve">
-    <value>Select</value>
+    <value>Seleccionar</value>
     <comment>Text for select button</comment>
   </data>
   <data name="SelectEffect.Text" xml:space="preserve">
-    <value>Select an effect to apply</value>
+    <value>Selecciona un efecto para aplicar</value>
     <comment>Text for select effect label</comment>
   </data>
   <data name="SelectFromDisk.Text" xml:space="preserve">
-    <value>Open image</value>
+    <value>Abrir imágen</value>
     <comment>Text for selecting an image from the device</comment>
   </data>
   <data name="SelectInstructions.Text" xml:space="preserve">
-    <value>Select an image from the gallery or from your device to apply an effect</value>
+    <value>Selecciona una imágen de la galería o de tu dispositivo para aplicarle un efecto</value>
     <comment>Text for selecting a default image to process</comment>
   </data>
   <data name="CopyrightThanksPixabayMsg.Text" xml:space="preserve">
-    <value>- Pixabay images licensed under Pixabay License. Thanks to Pixabay for the provided images for this application </value>
+    <value>- Pixabay imágenes licenciadas bajo Pixabay License. Gracias a Pixabay por las imágenes proveídas para esta aplicación</value>
   </data>
   <data name="AboutTitle.Text" xml:space="preserve">
-    <value>About PicRT Express v</value>
+    <value>Sobre PicRT Express v</value>
   </data>
   <data name="Apply.Content" xml:space="preserve">
-    <value>Apply</value>
+    <value>Aplicar</value>
   </data>
   <data name="EffectRandomLines" xml:space="preserve">
-    <value>Random lines</value>
+    <value>Líneas aleatorias</value>
   </data>
   <data name="EffectRandomLinesHorizontalSpace.Text" xml:space="preserve">
-    <value>Horizontal space</value>
+    <value>Espacio horizontal</value>
   </data>
   <data name="EffectRandomLinesVerticalSpace.Text" xml:space="preserve">
-    <value>Vertical space</value>
+    <value>Espacio vertical</value>
   </data>
   <data name="OKAction.Content" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="SaveChange.Content" xml:space="preserve">
-    <value>Save change</value>
+    <value>Guardar cambio</value>
   </data>
   <data name="EffectFlip" xml:space="preserve">
-    <value>Flip</value>
+    <value>Voltear</value>
   </data>
   <data name="EffectGray" xml:space="preserve">
-    <value>Gray</value>
+    <value>Gris</value>
   </data>
   <data name="EffectRotate" xml:space="preserve">
-    <value>Rotate</value>
+    <value>Rotar</value>
   </data>
   <data name="EffectRotateAngle.Text" xml:space="preserve">
-    <value>Angle</value>
+    <value>Ángulo</value>
   </data>
   <data name="EffectSepia" xml:space="preserve">
     <value>Sepia</value>
   </data>
   <data name="EffectConvolution" xml:space="preserve">
-    <value>Convolution</value>
+    <value>Convolución</value>
   </data>
   <data name="EffectConvolutionEdgeDetection.Content" xml:space="preserve">
-    <value>Edge detection</value>
+    <value>Detección de bordes</value>
   </data>
   <data name="EffectConvolutionGaussianBlur.Content" xml:space="preserve">
-    <value>Gaussian blur</value>
+    <value>Blur Gaussiano</value>
   </data>
   <data name="EffectConvolutionLineDetection.Content" xml:space="preserve">
-    <value>Line detection</value>
+    <value>Detección de líneas</value>
   </data>
   <data name="EffectConvolutionSimpleBoxBlur.Content" xml:space="preserve">
-    <value>Simple blur</value>
+    <value>Blur simple</value>
   </data>
   <data name="CopyrightOpenCVMsg.Text" xml:space="preserve">
-    <value>- OpenCV library which is licensed under 3-clause BSD License </value>
+    <value>- OpenCV librería licenciada bajo 3-clause BSD License </value>
   </data>
   <data name="CopyrightNoticesTitle.Text" xml:space="preserve">
-    <value>PicRT Express contains the following software or resources:</value>
+    <value>PicRT Express contiene los siguientes softwares o recursos:</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="OpenCVOfflineLicenseTitle" xml:space="preserve">
-    <value>OpenCV Offline License</value>
+    <value>OpenCV Licencia offline</value>
   </data>
   <data name="AboutAppCopyrightMsg.Text" xml:space="preserve">
-    <value>open source educational and research purpose software licensed under GPL-3.0</value>
-  </data>
-  <data name="AboutAppVersion.Text" xml:space="preserve">
-    <value>0.0.1</value>
+    <value>software open source de propósito educativo y de investigación licenciado bajo GPL-3.0</value>
   </data>
   <data name="ContactInfoTitle.Text" xml:space="preserve">
-    <value>Contact information</value>
+    <value>Información de contacto</value>
   </data>
 </root>

@@ -138,6 +138,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="PicRT Express_TemporaryKey.pfx" />
+    <PRIResource Include="Strings\es\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -217,9 +218,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\es\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
