@@ -22,7 +22,7 @@
             <Image x:Name="LogoImage"
                    Grid.Row="0"
                    Grid.Column="0" 
-                   Margin="0,24,24,0"
+                   Margin="0,32,24,0"
                    Source="/Assets/Square150x150Logo.png" 
                    VerticalAlignment="Top" />
 
