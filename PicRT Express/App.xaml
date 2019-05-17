@@ -4,4 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:PicRT_Express">
 
+    <Application.Resources>
+        <x:Double x:Key="ContentDialogMaxWidth">800</x:Double>
+    </Application.Resources>
+    
 </Application>

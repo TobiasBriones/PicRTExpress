@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Models\AboutDialog.cs" />
     <Compile Include="Models\Effect.cs" />
+    <Compile Include="Models\TextDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +138,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="PicRT Express_TemporaryKey.pfx" />
-    <PRIResource Include="Strings\es\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ic_info.png" />
@@ -183,6 +184,7 @@
     <Content Include="Assets\Images\img_7.jpg" />
     <Content Include="Assets\Images\img_8.jpg" />
     <Content Include="Assets\Images\img_9.jpg" />
+    <Content Include="ThirdPartyLicenses\OpenCV LICENSE.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -205,14 +207,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TextDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.7</Version>
+      <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Strings\en-US\" />
+    <Folder Include="Strings\es\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

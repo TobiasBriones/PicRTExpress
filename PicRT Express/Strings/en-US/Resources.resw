@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutMsg.Text" xml:space="preserve">
+    <value>PicRT Express - Picture ReTouch Express is an educational purpose UWP application for Software Engineering and Applied Mathematics which is implemented as a user UWP application based on mixed code and applies transformations and effects to images. It invokes C++ native code for high demanding mathematical operations thanks mainly to OpenCV and it also uses managed high-level code to process the user interface layer. The objectives are to know the architecture ran by an application which executes high performing tasks and the commercial product development; on the other hand, the application of widely used branches of math like linear algebra and differential equations theory.</value>
+  </data>
+  <data name="AppName.Text" xml:space="preserve">
+    <value>PicRT Express</value>
+  </data>
+  <data name="CancelAction" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CopyrightMsg.Text" xml:space="preserve">
+    <value>© 2019 Tobias Briones - PicRT Express</value>
+  </data>
+  <data name="EffectBrightness" xml:space="preserve">
+    <value>Brightness</value>
+  </data>
+  <data name="EffectBrightnessAmount.Text" xml:space="preserve">
+    <value>Brightness quantity [-100, 100]</value>
+  </data>
+  <data name="EffectPixelated" xml:space="preserve">
+    <value>Pixelated</value>
+  </data>
+  <data name="EffectPixelateRadius.Text" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="EffectPlot" xml:space="preserve">
+    <value>Plot</value>
+  </data>
+  <data name="EffectPlotCosine.Content" xml:space="preserve">
+    <value>Cosine</value>
+  </data>
+  <data name="EffectPlotCuadratic.Content" xml:space="preserve">
+    <value>Quadratic</value>
+  </data>
+  <data name="EffectPlotCubic.Content" xml:space="preserve">
+    <value>Cubic</value>
+  </data>
+  <data name="EffectPlotLinear.Content" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="EffectPlotLog.Content" xml:space="preserve">
+    <value>Logarithmic</value>
+  </data>
+  <data name="EffectPlotPrecision.Text" xml:space="preserve">
+    <value>Precision</value>
+  </data>
+  <data name="EffectPlotScale.Text" xml:space="preserve">
+    <value>Scale (x, y)</value>
+  </data>
+  <data name="EffectPlotSine.Content" xml:space="preserve">
+    <value>Sine</value>
+  </data>
+  <data name="EffectPlotSquareRoot.Content" xml:space="preserve">
+    <value>Squared root</value>
+  </data>
+  <data name="EffectPlotTangent.Content" xml:space="preserve">
+    <value>Tangent</value>
+  </data>
+  <data name="EffectRGB" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="EffectRGB_B.Text" xml:space="preserve">
+    <value>Blue intensity</value>
+  </data>
+  <data name="EffectRGB_G.Text" xml:space="preserve">
+    <value>Green intensity</value>
+  </data>
+  <data name="EffectRGB_R.Text" xml:space="preserve">
+    <value>Red intensity</value>
+  </data>
+  <data name="FlyoutApplying" xml:space="preserve">
+    <value>Applying...</value>
+    <comment>Text for flyout progress bar when applying something</comment>
+  </data>
+  <data name="FlyoutLoading" xml:space="preserve">
+    <value>Loading...</value>
+    <comment>Text for flyout progress bar when loading</comment>
+  </data>
+  <data name="Image.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="OpenSavedImages.Content" xml:space="preserve">
+    <value>Go to my images</value>
+    <comment>Text for opening the save folder</comment>
+  </data>
+  <data name="Reset.Content" xml:space="preserve">
+    <value>Undo changes</value>
+    <comment>Text for reset button</comment>
+  </data>
+  <data name="ResetAction" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetDialog" xml:space="preserve">
+    <value>Do you want to undo the changes?</value>
+    <comment>Text for reset button confirm dialog</comment>
+  </data>
+  <data name="Result.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Save.Content" xml:space="preserve">
+    <value>Save</value>
+    <comment>Text for save button</comment>
+  </data>
+  <data name="Select.Content" xml:space="preserve">
+    <value>Select</value>
+    <comment>Text for select button</comment>
+  </data>
+  <data name="SelectEffect.Text" xml:space="preserve">
+    <value>Select an effect to apply</value>
+    <comment>Text for select effect label</comment>
+  </data>
+  <data name="SelectFromDisk.Text" xml:space="preserve">
+    <value>Open image</value>
+    <comment>Text for selecting an image from the device</comment>
+  </data>
+  <data name="SelectInstructions.Text" xml:space="preserve">
+    <value>Select an image from the gallery or from your device to apply an effect</value>
+    <comment>Text for selecting a default image to process</comment>
+  </data>
+  <data name="CopyrightThanksPixabayMsg.Text" xml:space="preserve">
+    <value>- Pixabay images licensed under Pixabay License. Thanks to Pixabay for the provided images for this application. </value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>About PicRT Express v</value>
+  </data>
+  <data name="Apply.Content" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="EffectRandomLines" xml:space="preserve">
+    <value>Random lines</value>
+  </data>
+  <data name="EffectRandomLinesHorizontalSpace.Text" xml:space="preserve">
+    <value>Horizontal space</value>
+  </data>
+  <data name="EffectRandomLinesVerticalSpace.Text" xml:space="preserve">
+    <value>Vertical space</value>
+  </data>
+  <data name="OKAction.Content" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SaveChange.Content" xml:space="preserve">
+    <value>Save change</value>
+  </data>
+  <data name="EffectFlip" xml:space="preserve">
+    <value>Flip</value>
+  </data>
+  <data name="EffectGray" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="EffectRotate" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="EffectRotateAngle.Text" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="EffectSepia" xml:space="preserve">
+    <value>Sepia</value>
+  </data>
+  <data name="EffectConvolution" xml:space="preserve">
+    <value>Convolution</value>
+  </data>
+  <data name="EffectConvolutionEdgeDetection.Content" xml:space="preserve">
+    <value>Edge detection</value>
+  </data>
+  <data name="EffectConvolutionGaussianBlur.Content" xml:space="preserve">
+    <value>Gaussian blur</value>
+  </data>
+  <data name="EffectConvolutionLineDetection.Content" xml:space="preserve">
+    <value>Line detection</value>
+  </data>
+  <data name="EffectConvolutionSimpleBoxBlur.Content" xml:space="preserve">
+    <value>Simple blur</value>
+  </data>
+  <data name="CopyrightOpenCVMsg.Text" xml:space="preserve">
+    <value>- OpenCV library which is licensed under 3-clause BSD License </value>
+  </data>
+  <data name="CopyrightNoticesTitle.Text" xml:space="preserve">
+    <value>PicRT Express contains the following software or resources:</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenCVOfflineLicenseTitle" xml:space="preserve">
+    <value>OpenCV Offline License</value>
+  </data>
+  <data name="AboutAppCopyrightMsg.Text" xml:space="preserve">
+    <value>open source educational and research purpose software licensed under GPL-3.0</value>
+  </data>
+  <data name="AboutAppVersion.Text" xml:space="preserve">
+    <value>0.0.1</value>
+  </data>
+  <data name="ContactInfoTitle.Text" xml:space="preserve">
+    <value>Contact information</value>
+  </data>
+</root>
