@@ -1,0 +1,5 @@
+Bugs:
+- Saves black image to storage when using a different way to process pixels (when using the wrapper for example)
+- The toolbar is badly positioned, the page moves up when maximizing the window
+- Rotate does not apply for some pixels, it leaves some (~ 3) black lines around the border
+- Result Image doesn't show in Windows Light theme, only it shows in Windows Dark theme
